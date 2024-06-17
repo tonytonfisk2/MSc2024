@@ -1,0 +1,4 @@
+# ignore logs and checkpoints
+task_specific/logs
+task_specific/results
+.ipynb_checkpoints/
