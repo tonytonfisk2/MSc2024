@@ -3,5 +3,5 @@ datasets
 numpy
 torch
 scikit-learn
-accelerate -U
+accelerate
 evaluate
