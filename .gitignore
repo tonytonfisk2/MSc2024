@@ -2,3 +2,5 @@
 logs/
 results/
 .ipynb_checkpoints/
+data/
+models/

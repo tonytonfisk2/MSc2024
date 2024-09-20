@@ -15,6 +15,8 @@
 """
 Preprocessing script before training DistilBERT.
 Specific to BERT -> DistilBERT.
+
+python extract_bert.py --model_type bert --model_name bert-base-uncased --dump_checkpoint /mnt/tony/MSc2024/distilbert_init/models/distilbert_qk.pth
 """
 
 import argparse
@@ -54,12 +56,12 @@ if __name__ == "__main__":
     std_idx = 0
     for teacher_idx in [0, 2, 4, 7, 9, 11]:
         for w in ["weight", "bias"]:
-            compressed_sd[f"distilbert.transformer.layer.{std_idx}.attention.q_lin.{w}"] = state_dict[
-                f"{prefix}.encoder.layer.{teacher_idx}.attention.self.query.{w}"
-            ]
-            compressed_sd[f"distilbert.transformer.layer.{std_idx}.attention.k_lin.{w}"] = state_dict[
-                f"{prefix}.encoder.layer.{teacher_idx}.attention.self.key.{w}"
-            ]
+            #compressed_sd[f"distilbert.transformer.layer.{std_idx}.attention.q_lin.{w}"] = state_dict[
+            #    f"{prefix}.encoder.layer.{teacher_idx}.attention.self.query.{w}"
+            #]
+            #compressed_sd[f"distilbert.transformer.layer.{std_idx}.attention.k_lin.{w}"] = state_dict[
+            #    f"{prefix}.encoder.layer.{teacher_idx}.attention.self.key.{w}"
+            #]
             compressed_sd[f"distilbert.transformer.layer.{std_idx}.attention.v_lin.{w}"] = state_dict[
                 f"{prefix}.encoder.layer.{teacher_idx}.attention.self.value.{w}"
             ]
