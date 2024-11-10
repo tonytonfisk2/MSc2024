@@ -9,4 +9,5 @@ comet_ml
 optuna
 bitsandbytes
 git+https://github.com/huggingface/accelerate.git
-logging
+tf-keras
+matplotlib
